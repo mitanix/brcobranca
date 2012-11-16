@@ -79,6 +79,7 @@ module Brcobranca
     # @example
     #  "00192376900000135000000001238798777770016818".linha_digitavel #=> "00190.00009 01238.798779 77700.168188 2 37690000013500"
     def linha_digitavel
+        puts 'LINHA DIGITAVEL'
       if self =~ /^(\d{4})(\d{1})(\d{14})(\d{5})(\d{10})(\d{10})$/
         linha = $1
         linha << $4
@@ -87,6 +88,8 @@ module Brcobranca
         linha << $5.modulo10.to_s
         linha << $6
         linha << $6.modulo10.to_s
+        puts $6
+        puts $6.modulo10.to_s
         linha << $2
         linha << $3
         linha.gsub(/^(.{5})(.{5})(.{5})(.{6})(.{5})(.{6})(.{1})(.{14})$/,'\1.\2 \3.\4 \5.\6 \7 \8')
