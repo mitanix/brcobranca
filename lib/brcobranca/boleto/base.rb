@@ -185,8 +185,12 @@ module Brcobranca
         codigo = codigo_barras_primeira_parte #18 digitos
         codigo << codigo_barras_segunda_parte #25 digitos
         if codigo =~ /^(\d{4})(\d{39})$/
+          puts 'CODIGO BARRAS'
+          puts codigo
           codigo_dv = codigo.modulo11_2to9
+          puts codigo_dv
           codigo = "#{$1}#{codigo_dv}#{$2}"
+          puts codigo
           codigo
         else
           raise Brcobranca::BoletoInvalido.new(self)
