@@ -82,17 +82,25 @@ module Brcobranca
         puts 'LINHA DIGITAVEL'
       if self =~ /^(\d{4})(\d{1})(\d{14})(\d{5})(\d{10})(\d{10})$/
         linha = $1
+        puts $1
         linha << $4
+        puts $4
         linha << linha.modulo10.to_s
+        puts linha.modulo10.to_s
         linha << $5
+        puts $5
         linha << $5.modulo10.to_s
+        puts $5.modulo10.to_s
         linha << $6
-        linha << $6.modulo10.to_s
         puts $6
+        linha << $6.modulo10.to_s
         puts $6.modulo10.to_s
         linha << $2
+        puts $2
         linha << $3
+        puts $3
         linha.gsub(/^(.{5})(.{5})(.{5})(.{6})(.{5})(.{6})(.{1})(.{14})$/,'\1.\2 \3.\4 \5.\6 \7 \8')
+        puts linha.gsub(/^(.{5})(.{5})(.{5})(.{6})(.{5})(.{6})(.{1})(.{14})$/,'\1.\2 \3.\4 \5.\6 \7 \8')
       else
         raise ArgumentError, "#{self} Precisa conter 44 caracteres numéricos."
       end
