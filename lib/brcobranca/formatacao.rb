@@ -82,7 +82,7 @@ module Brcobranca
       if self =~ /^(\d{4})(\d{1})(\d{14})(\d{5})(\d{10})(\d{10})$/
         linha = $1
         linha << $4
-        linha << 1.to_s
+        linha << '1'
         linha << $5
         linha << $5.modulo10.to_s
         linha << $6
