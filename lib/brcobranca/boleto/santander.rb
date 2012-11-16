@@ -64,7 +64,7 @@ module Brcobranca
       # @example
       #  boleto.nosso_numero_boleto #=> "000090002720-7"
       def nosso_numero_boleto
-        nosso_numero = self.numero_documento.to_s.rjust(12,'0') unless self.numero_documento.nil?
+        nosso_numero = self.numero_documento.to_s.rjust(13,'0') unless self.numero_documento.nil?
         "#{nosso_numero}-#{self.nosso_numero_dv}"
       end
 
