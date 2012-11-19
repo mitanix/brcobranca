@@ -90,7 +90,7 @@ module Brcobranca
         puts self.numero_documento
         puts self.nosso_numero_dv
         puts "9#{self.convenio}#{self.numero_documento}#{self.nosso_numero_dv}0#{self.carteira}"
-        "9#{self.convenio}#{self.numero_documento}#{self.nosso_numero_dv}0#{self.carteira}"
+        "9#{self.convenio}0000#{self.numero_documento}#{self.nosso_numero_dv}0#{self.carteira}"
       end
 
     end
