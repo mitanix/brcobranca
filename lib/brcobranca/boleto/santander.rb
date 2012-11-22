@@ -56,7 +56,8 @@ module Brcobranca
       # @return [String] 1 caracteres numéricos.
       def nosso_numero_dv
         nosso_numero = self.numero_documento.to_s.rjust(12,'0') unless self.numero_documento.nil?
-        nosso_numero.modulo11_2to9
+        # nosso_numero.modulo11_2to9 # original
+        nosso_numero.modulo11_2to9_santander_real
       end
 
       # Nosso número para exibir no boleto.
@@ -86,10 +87,7 @@ module Brcobranca
       #
       # @return [String] 25 caracteres numéricos.
       def codigo_barras_segunda_parte
-        # "9#{self.convenio}00000#{self.numero_documento}0#{self.carteira}"
-        puts self.numero_documento
-        puts self.nosso_numero_dv
-        puts "9#{self.convenio}#{self.numero_documento}#{self.nosso_numero_dv}0#{self.carteira}"
+        # "9#{self.convenio}00000#{self.numero_documento}0#{self.carteira}" # original
         "9#{self.convenio}0000#{self.numero_documento}#{self.nosso_numero_dv}0#{self.carteira}"
       end
 

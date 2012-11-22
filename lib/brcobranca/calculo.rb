@@ -58,6 +58,20 @@ module Brcobranca
       valor = (11 - (total % 11))
       return [0,10,11].include?(valor) ? 1 : valor
     end
+
+    def modulo11_2to9_santander_real
+      total = self.multiplicador([2,3,4,5,6,7,8,9])
+
+      if (total % 11 == 0 || total % 11 == 1)
+        valor = 0
+      elsif total % 11 == 10
+        valor = 1
+      else
+        valor = (11 - (total % 11))
+      end
+          
+      return valor
+    end
     
     # Calcula módulo 11 com multiplicaroes de 2 a 9 (Utilizado pela CAIXA - boletos SIGCB).
     #
